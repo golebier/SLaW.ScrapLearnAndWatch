@@ -15,15 +15,23 @@ I'll have AI in Apache Spark to learn what content I prefer
 
 --------------------------------------------------------------------------------
 TODO:
+
 1. prapare project
+
 2. prepare tdd based flow from begining
+
 3. move DB part as REST api, at first bash logic will do all but
     REST api will take DB part
     in bash part this is done in three different steps, so:
+
  a) DB/REST for Newst Content
+
  b) DB/REST for Choosen Content Base URLs
+
  c) DB/REST for Choosen Content to be fetched
+
 4. basic UI // add more
+
 5. Automate // add more
 --------------------------------------------------------------------------------
 Done:
