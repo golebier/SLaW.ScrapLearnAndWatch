@@ -7,16 +7,16 @@ require 'dm-migrations'
 require 'sinatra/cross_origin'
 
 configure :development do
-  set :datamapper_url, "sqlite3://#{File.dirname(__FILE__)}/company.sqlite3"
+  set :datamapper_url, "sqlite3://#{File.dirname(__FILE__)}/data.sqlite3"
 end
 
 configure :test do
-  set :datamapper_url, "sqlite3://#{File.dirname(__FILE__)}/company.sqlite3"
+  set :datamapper_url, "sqlite3://#{File.dirname(__FILE__)}/data.sqlite3"
 end
 
 configure :production do
 #  set :datamapper_url, "mongodb://mongodb:12345@localhost/sinatra_service"
-  set :datamapper_url, "sqlite3://#{File.dirname(__FILE__)}/company.sqlite3"
+  set :datamapper_url, "sqlite3://#{File.dirname(__FILE__)}/data.sqlite3"
 end
 
 configure :production_mysql do
@@ -40,12 +40,9 @@ use Rack::Protection::HttpOrigin, :origin_whitelist => ['http://192.168.1.100:92
 
 DataMapper.setup(:default, settings.datamapper_url)
 
-# TODO
-#require './data/init'
-#require './lib/init'
-#require './app/init'
-
-#DataMapper.finalize
+require './data/init'
+require './lib/init'
+require './app/init'
 
 ## Tell DataMapper to update the database according to the definitions above.
 DataMapper.auto_upgrade!
