@@ -44,28 +44,6 @@ require './data/init'
 require './lib/init'
 require './app/init'
 
-## Tell DataMapper to update the database according to the definitions above.
 DataMapper.auto_upgrade!
 
 DataMapper.finalize
-
-#hold data betwin runs
-
-# If there are no Things in the database, add a few.
-#if Company.count == 0
-#  directorylist = `ls ~`
-#  
-#  directorylist.each do |filename|
-#    print filename
-#    Company.create(:name => filename, :watched_counter => "0")
-#  end
-#end
-
-# stdout, stderr, status = Open3.capture3('nroff -man', :stdin_data => stdin)
-#directorylist = %x[find . -name '*test.rb' | sort]
-
-#directorylist.each do |filename|
-#  #filename.chomp!
-#  # work with file
-#  print filename
-#end
